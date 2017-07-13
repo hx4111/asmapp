@@ -1,24 +1,17 @@
 import React from 'react'
-import Drawer from 'material-ui/Drawer'
+import ReactDOM from 'react-dom'
+import App from './routes.js'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import './less/index.less'
 
-export default class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            container: {
-                drawer: false
-            }
-        }
-    }
+injectTapEventPlugin()
 
-    render() {
-        return (
-            <div>
-                <Drawer open={this.state.container.drawer} className="side-slide">
-                    <MenuItem>Menu Item</MenuItem>
-                    <MenuItem>Menu Item 2</MenuItem>
-                </Drawer>
-            </div>
-        )
-    }
-}
+ReactDOM.render(
+    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+        <App />
+    </MuiThemeProvider>, 
+    document.getElementById('root')
+)
