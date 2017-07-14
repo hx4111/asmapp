@@ -2,15 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './routes.js'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+import createPalette from 'material-ui/styles/palette'
 import './less/index.less'
 
 injectTapEventPlugin()
 
-ReactDOM.render(
-    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+const theme = createMuiTheme({
+    palette: createPalette({
+        type: 'light', // Switching the dark mode on is a single property value change.
+    }),
+})
+
+ReactDOM.render( 
+    <MuiThemeProvider theme={theme} >
         <App />
     </MuiThemeProvider>, 
     document.getElementById('root')
