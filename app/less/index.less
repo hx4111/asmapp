@@ -24,13 +24,11 @@ a { text-decoration: none;}
 .hide { display:none;}
 .show { display: block;}
 
+@import '//at.alicdn.com/t/font_hbl0p5at3pk9ms4i.css';
 
-.fl-left {
-    float: left;
-}
-
-.fl-right {
-    float: right;
+.iconfont {
+    font-size: 20px;
+    margin: 0 2px;
 }
 
 .index-header {
@@ -39,12 +37,16 @@ a { text-decoration: none;}
 
     .index-header-inner {
         margin: 10px 20px;
-        .fl-left {
-            .header-bean {
-                display: inline-block;
-                margin-left: 10px;
-                align-content: middle;
-            }
+        display: flex;
+        justify-content: space-between;
+
+        .header-bean {
+            margin-left: 15px;
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, .3);
+            padding: 3px 1px;
+            border-radius: 5px;
         }
     }
 }

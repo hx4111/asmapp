@@ -1,7 +1,5 @@
 import React from 'react'
-import IconToc from 'material-ui-icons/Toc'
-import IconStar from 'material-ui-icons/Star'
-import IconAddBox from 'material-ui-icons/AddBox'
+import Icon from 'material-ui/Icon'
 import Chip from 'material-ui/Chip'
 
 export default class IndexHeader extends React.Component {
@@ -13,15 +11,15 @@ export default class IndexHeader extends React.Component {
         return (
             <div className="index-header">
                 <div className="index-header-inner">
-                    <div className="fl-left">
-                        <span><IconToc /></span>
+                    <div>
+                        <span><Icon className="iconfont icon-ic_toc" color="primary"></Icon></span>
                         <div className="header-bean">
-                            <IconStar />
+                            <Icon className="iconfont icon-ic_album" color="primary"></Icon> 
                             { this.state.bean }
-                            <IconAddBox />
+                            <Icon className="iconfont icon-ic_add_box" color="primary"></Icon> 
                         </div>
                     </div>
-                    <div className="fl-right">
+                    <div>
                         <Chip label="Basic Chip" />
                     </div>
                 </div>
