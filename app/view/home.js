@@ -1,7 +1,5 @@
 import React from 'react'
-import SideDrawer from '../component/sideDrawer.js'
-import IndexHeader from '../component/indexHeader.js'
-import CardList from '../component/cardList.js'
+import SideDrawerHandle from '../containers/sideDrawerHandle.js'
 
 export default class Home extends React.Component {
     state = {
@@ -12,9 +10,7 @@ export default class Home extends React.Component {
 
         return (
             <div>
-                <SideDrawer />
-                <IndexHeader />
-                <CardList />
+                <SideDrawerHandle />
             </div>
         )
     }
