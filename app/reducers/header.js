@@ -1,0 +1,13 @@
+
+const initialState = {
+  bean: 0
+}
+
+const header = (state = initialState, action) => {
+  switch (action.type) {
+    default: 
+      return state
+  }
+}
+
+export default header

@@ -1,12 +1,16 @@
 
-const sideDrawer = (state, action) => {
+const initialState = {
+  open: true
+}
+
+const sideDrawer = (state = initialState, action) => {
   switch (action.type) {
     case 'TOGGLE_SIDEDRAWER': 
       return {
-        sideDrawerOpen: !state.sideDrawerOpen
+        open: !state.open
       }
     default: 
-      return state
+      return Object.assign({}, state)
   }
 }
 

@@ -15,26 +15,26 @@ import reducers from './reducers/index.js'
 injectTapEventPlugin()
 
 const store = createStore(
-    reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 const theme = createMuiTheme({
-    palette: createPalette({
-        primary: yellow,
-        accent: {
-            ...green,
-            A400: '#00e677',
-        },
-        error: red
-    }),
+  palette: createPalette({
+    primary: yellow,
+    accent: {
+      ...green,
+      A400: '#00e677',
+    },
+    error: red
+  }),
 })
 
 ReactDOM.render( 
-    <MuiThemeProvider theme={theme} >
-        <Provider store={store}>
-            <Routes />
-        </Provider>
-    </MuiThemeProvider>, 
-    document.getElementById('root')
+  <MuiThemeProvider theme={theme} >
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+  </MuiThemeProvider>, 
+  document.getElementById('root')
 )

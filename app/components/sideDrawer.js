@@ -8,44 +8,46 @@ import DraftsIcon from 'material-ui-icons/Drafts'
 import StarIcon from 'material-ui-icons/Star'
 import SendIcon from 'material-ui-icons/Send'
 
-const SideDrawer = ({ open, handleOpen }) => (
-  <Drawer open={open} 
-    onRequestClose={handleOpen}>
-    <List>
-      <ListItem button>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItem>
-    </List>
-    <Divider />
-    <List>
-      <ListItem button>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <StarIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItem>
-    </List>
-  </Drawer>
-)
+const SideDrawer = ({open, handleOpen}) => {
+  return (
+    <Drawer open={ open } 
+      onRequestClose={ handleOpen }>
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <DraftsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <StarIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <SendIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+      </List>
+    </Drawer>
+  )
+}
 
 SideDrawer.propTypes = {
-  open: PropTypes.bool,
-  handleOpen: PropTypes.func
+    open: PropTypes.bool,
+    handleOpen: PropTypes.func
 }
 
 export default SideDrawer

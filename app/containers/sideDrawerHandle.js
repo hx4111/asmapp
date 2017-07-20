@@ -3,12 +3,18 @@ import { connect } from 'react-redux'
 import SideDrawer from '../components/sideDrawer.js'
 import { sideDrawerOpenHandle } from '../actions/index.js'
 
-const mapStateToProps = (state) => ({
-  open: state.sideDrawerOpen
-})
+const mapStateToProps = (state) => {
+  return {
+    open: state.sideDrawer.open
+  }
+}
 
-const mapDispatchToProps = {
-  handleOpen: sideDrawerOpenHandle
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleOpen: () => {
+      dispatch(sideDrawerOpenHandle())
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer)
